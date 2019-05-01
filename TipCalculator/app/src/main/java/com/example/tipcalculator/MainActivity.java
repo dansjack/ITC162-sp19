@@ -3,6 +3,7 @@ package com.example.tipcalculator;
 import java.text.NumberFormat;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-public class MainActivity extends Activity implements TextView.OnEditorActionListener, OnClickListener {
+public class MainActivity extends AppCompatActivity implements TextView.OnEditorActionListener, OnClickListener {
 
     // define variables for the widgets
     private EditText billAmountEditText;
