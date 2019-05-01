@@ -87,7 +87,7 @@
         tools:text="@string/tip" />
 
     <TextView
-        android:id="@+id/percentTipView"
+        android:id="@+id/tipTextView"
         android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
@@ -114,6 +114,6 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/percentTipView" />
+        app:layout_constraintTop_toBottomOf="@+id/tipTextView" />
 
 </android.support.constraint.ConstraintLayout>
