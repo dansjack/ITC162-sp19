@@ -17,47 +17,52 @@ public class TaskListActivity extends Activity {
         TaskListDB db = new TaskListDB(this);
         StringBuilder sb = new StringBuilder();
 
-        // insert a task
-        Task task = new Task(1, "Make dentist appointment", "", "0", "0");
-        long insertId = db.insertTask(task);
-        if (insertId > 0) {
-            sb.append("Row inserted! Insert Id: " + insertId + "\n");
-        }
 
 
+        //************ ADD TASKS ************
 
-        // insert a third task - ***** FOR ASSIGNMENT 6 ******
-        Task task3 = new Task(1, "Get some cat food from Mud Bay", "", "0", "0");
-        long insertId3 = db.insertTask(task3);
-        if (insertId3 > 0) {
-            sb.append("Row inserted! Insert Id: " + insertId3 + "\n");
-        }
-
-        Task task4 = new Task(1, "Go to the zoo and have a rad time", "", "0", "0");
-        long insertId4 = db.insertTask(task4);
-        if (insertId4 > 0) {
-            sb.append("Row inserted! Insert Id: " + insertId4 + "\n");
-        }
-
-        // insert a second task
-        Task task2 = new Task(1, "Take car in for oil change", "", "0", "0");
+        // insert a task - ***** FOR ASSIGNMENT 6 ******
+        Task task2 = new Task(1, "Get some cat food from Mud Bay", "", "0", "0");
         long insertId2 = db.insertTask(task2);
         if (insertId2 > 0) {
             sb.append("Row inserted! Insert Id: " + insertId2 + "\n");
         }
 
-        // update a task
-        task.setId((int) 6);
-        task.setName("TASK UPDATE: I forgot I don't have a car, no oil change needed");
-        int updateCount = db.updateTask(task);
+        // insert a second task - ***** FOR ASSIGNMENT 6 ******
+        Task task3 = new Task(1, "Go to the zoo and have a rad time", "", "0", "0");
+        long insertId3 = db.insertTask(task3);
+        if (insertId3 > 0) {
+            sb.append("Row inserted! Insert Id: " + insertId3 + "\n");
+        }
+
+        // insert a third task
+        Task task4 = new Task(1, "Take car in for oil change", "", "0", "0");
+        long insertId4 = db.insertTask(task4);
+        if (insertId4 > 0) {
+            sb.append("Row inserted! Insert Id: " + insertId4 + "\n");
+        }
+
+        // insert a fourth task
+        Task task5 = new Task(1, "Make dentist appointment", "", "0", "0");
+        long insertId5 = db.insertTask(task5);
+        if (insertId5 > 0) {
+            sb.append("Row inserted! Insert Id: " + insertId5 + "\n");
+        }
+
+        //************ UPDATE TASKS ************
+
+        // update Oil Change task - ***** FOR ASSIGNMENT 6 ******
+        task4.setId((int) 5);
+        task4.setName("TASK UPDATE: I forgot I don't have a car, no oil change needed");
+        int updateCount = db.updateTask(task4);
         if (updateCount == 1) {
             sb.append("Task updated! Update count: " + updateCount + "\n");
         }
 
 
 
-        // delete a task
-        int deleteCount = db.deleteTask(insertId);
+        // delete dentist task - ***** FOR ASSIGNMENT 6 ******
+        int deleteCount = db.deleteTask(insertId5);
         if (deleteCount == 1) {
             sb.append("Task deleted! Delete count: " + deleteCount + "\n\n");
         }
