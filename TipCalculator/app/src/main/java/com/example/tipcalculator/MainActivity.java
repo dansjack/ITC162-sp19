@@ -2,6 +2,7 @@ package com.example.tipcalculator;
 
 import java.text.NumberFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,6 +32,23 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
     private String billAmountString = "";
     private float tipPercent = .15f;
 
+    // define TAG
+    private static final String TAG = "MainActivity";
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy: HELLO");
+        // attempts to delete memory on closing the app
+        //Editor editor = savedValues.edit();
+        //editor.putString("billAmountString", "");
+        //editor.putFloat("tipPercent", 0);
+        //editor.apply();
+
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
 
         // get SharedPreferences object
         savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
+
+        Log.i(TAG, "onCreate: HELLO");
     }
 
     @Override
@@ -59,10 +79,13 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         Editor editor = savedValues.edit();
         editor.putString("billAmountString", billAmountString);
         editor.putFloat("tipPercent", tipPercent);
-        editor.commit();
+        editor.apply();
 
         super.onPause();
     }
+
+
+
 
     @Override
     public void onResume() {
@@ -126,5 +149,7 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
                 break;
         }
     }
+
+
 }
 
