@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class TipEntity {
+public class Tip {
 
     @PrimaryKey(autoGenerate = true)
     public Integer _id;
